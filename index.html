@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Área Círculo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header">
+          <h3>Calculadora de Área de Círculo</h3>
+        </div>
+        <div class="card-body">
+          <form id="areaForm">
+            <div class="form-group">
+              <label for="Radio">Radio del círculo:</label>
+              <input
+                type="number"
+                class="form-control"
+                id="Radio"
+                placeholder="Introduce el radio"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary my-2">
+              Calcular Área
+            </button>
+          </form>
+          <div class="mt-3">
+            <h4>El área del círculo es: <span id="resultadoArea">0</span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document
+        .getElementById("areaForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const radio = parseFloat(document.getElementById("Radio").value);
+          if (radio && radio > 0) {
+            const area = Math.PI * Math.pow(radio, 2);
+            document.getElementById("resultadoArea").textContent =
+            area;
+            console.log(`El área del círculo es: ${area}`);
+          } else {
+            document.getElementById("arearesultadoAreaResult").textContent =
+              "0";
+          }
+        });
+    </script>
+  </body>
+</html>
